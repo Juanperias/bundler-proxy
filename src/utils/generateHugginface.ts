@@ -5,7 +5,7 @@ import { HF } from '../libs/hugginface'
 export async function generateHugginface (input: input): Promise<string> {
   const response = await HF.textGeneration({
     inputs: input.prompt,
-    model: env.HUGGINGFACE_MODEL,
+    model: env.MODEL,
     parameters: {
       top_k: input.top_k,
       top_p: input.top_p,

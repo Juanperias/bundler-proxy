@@ -28,7 +28,7 @@ router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         yield (0, response_1.generateResponse)(input);
         res.json({
             status: '200',
-            message: `RUNNING ${env_1.env.HUGGINGFACE_MODEL}`
+            message: `RUNNING ${env_1.env.MODEL}`
         });
     }
     catch (e) {

@@ -9,22 +9,24 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.generateHugginface = void 0;
+exports.generateLLama = void 0;
 const env_1 = require("../env");
-const hugginface_1 = require("../libs/hugginface");
-function generateHugginface(input) {
+const llama_1 = require("../libs/llama");
+function generateLLama(input) {
+    var _a;
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield hugginface_1.HF.textGeneration({
-            inputs: input.prompt,
+        const res = yield llama_1.llama.chat.completions.create({
             model: env_1.env.MODEL,
-            parameters: {
-                top_k: input.top_k,
-                top_p: input.top_p,
-                temperature: input.temperature,
-                max_new_tokens: input.max_new_tokens
-            }
+            messages: [
+                {
+                    role: 'user',
+                    content: input.prompt
+                }
+            ],
+            temperature: input.temperature,
+            top_p: input.top_p
         });
-        return response.generated_text;
+        return (_a = res.choices[0].message.content) !== null && _a !== void 0 ? _a : '';
     });
 }
-exports.generateHugginface = generateHugginface;
+exports.generateLLama = generateLLama;

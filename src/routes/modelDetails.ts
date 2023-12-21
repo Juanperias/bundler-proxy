@@ -6,7 +6,7 @@ const router = Router()
 // GET MODEL DETAILS
 router.get('/api/v1/model', (req, res) => {
   res.json({
-    result: env.HUGGINGFACE_MODEL
+    result: env.MODEL
   })
 })
 

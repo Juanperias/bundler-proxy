@@ -12,10 +12,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.generateResponse = void 0;
 const generateHugginface_1 = require("./generateHugginface");
 const generateFireworks_1 = require("./generateFireworks");
+const generateLlama_1 = require("./generateLlama");
+const generateWorkers_1 = require("./generateWorkers");
 const env_1 = require("../env");
 function generateResponse(input) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = env_1.env.PROVIDER === 'huggingface' ? yield (0, generateHugginface_1.generateHugginface)(input) : yield (0, generateFireworks_1.generateFireworks)(input);
+        let response = '';
+        switch (env_1.env.PROVIDER) {
+            case 'fireworks':
+                response = yield (0, generateFireworks_1.generateFireworks)(input);
+                break;
+            case 'llama':
+                response = yield (0, generateLlama_1.generateLLama)(input);
+                break;
+            case 'huggingface':
+                response = yield (0, generateHugginface_1.generateHugginface)(input);
+                break;
+            case 'workers':
+                response = yield (0, generateWorkers_1.generateWorkers)(input);
+                break;
+        }
         return response;
     });
 }

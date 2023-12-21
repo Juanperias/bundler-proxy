@@ -1,8 +1,7 @@
-![NOTE]
 don't use hugginface if you don't wanna cry
 
 # BUNDLER PROXY
-This is a simple proxy, this have 2 providers huggingface and fireworks
+This is a simple proxy, this have 2 providers huggingface, fireworks and voyage
 
 # REQUIREMENTS
 you need for run this proxy:
@@ -22,10 +21,18 @@ if you wanna use huggingface change the provider to huggingface
 
 else if you wanna use fireworks change the provider to fireworks
 
+else if you wanna use cloudflare workers change the provider to workers
+
+else if you wanna use llama-api change the provider to llama
+
 if you're using hugginface create a access token [hugginface page](https://huggingface.co/settings/tokens)
 
 else if you're using fireworks, obtain an api key in 
 [fireworks page](https://app.fireworks.ai/)
+
+else if you're using llama api obtain an api key in
+[llama api page](https://www.llama-api.com/)
+
 
 
 # SELECTING A MODEL A RUN THE PROXY

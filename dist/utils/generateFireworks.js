@@ -16,7 +16,7 @@ function generateFireworks(input) {
     var _a;
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield fireworks_1.fireworks.chat.completions.create({
-            model: env_1.env.FIREWORKS_MODEL,
+            model: env_1.env.MODEL,
             messages: [
                 {
                     role: 'user',

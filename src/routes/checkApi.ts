@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 
     res.json({
       status: '200',
-      message: `RUNNING ${env.HUGGINGFACE_MODEL}`
+      message: `RUNNING ${env.MODEL}`
     })
   } catch (e) {
     if (e instanceof Error) {
